@@ -1,7 +1,10 @@
 [project]
 name = "levi"
 version = "0.1.0"
-description = "Add your description here"
+description = "an cli application to compare the levenshtein distances between strings and files."
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "click>=8.2.1",
+    "pytest>=8.4.1",
+]

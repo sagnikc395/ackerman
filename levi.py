@@ -1,3 +1,6 @@
+import click
+
+
 def lev(s1: str, s2: str) -> None:
     """
     return the levenshtein distance bw the strings
@@ -33,13 +36,13 @@ def lev(s1: str, s2: str) -> None:
     )
 
 
-def main():
-    print(lev("apple", "dapple"))
-    print(lev("apple", "apple"))
-    print(lev("apple","grapple"))
-    print(lev("apple","dapled"))
-    print(lev("apple","eappla"))
-
+@click.command()
+@click.option("--src",default='',help='The source string.')
+@click.option("--dest",default='',help='The destination string.')
+def main(src,dest):
+    click.echo(lev(src,dest))
     
+
+        
 if __name__ == "__main__":
     main()
