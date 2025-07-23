@@ -17,25 +17,29 @@ def lev(s1: str, s2: str) -> None:
 
     # case if both the character at the posn match
     if s1[-1] == s2[-1]:
+        # ignore compile
         return lev(s1[:-1],s2[:-1])
     
     # recursively call on last element , until the size becomes 0
     # using divide and conquer
 
     # add a character , cause source is reduced, but target is increased.
-    return min(
+    return 1+ min(
         lev(s1[:-1], s2),
         # remove a character, cause destination is reduces, source same size
         lev(s1, s2[:-1]),
         ## remove last character from each of them
-        lev(s1[::-1], s2[::-1]),
+        lev(s1[:-1], s2[:-1]),
     )
 
 
 def main():
     print(lev("apple", "dapple"))
     print(lev("apple", "apple"))
+    print(lev("apple","grapple"))
+    print(lev("apple","dapled"))
+    print(lev("apple","eappla"))
 
-
+    
 if __name__ == "__main__":
     main()
