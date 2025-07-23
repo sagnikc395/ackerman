@@ -1,8 +1,6 @@
-## levi\ackerman
+## ackerman
 
-> "levi is ackerman and ackerman is levi"
-
-![levi_logo](./assets/levi_is_us.jpeg)
+![ackerman_logo](./assets/levi_is_us.jpeg)
 
 a cli app to compare the levenshtein distance between strings and files.
 
