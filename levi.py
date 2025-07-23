@@ -1,4 +1,5 @@
 import click
+from constants import ASCII 
 
 
 def lev(s1: str, s2: str) -> None:
@@ -36,11 +37,24 @@ def lev(s1: str, s2: str) -> None:
     )
 
 
-@click.command()
+@click.command(context_settings={"show_default": True})
 @click.option("--src",default='',help='The source string.')
 @click.option("--dest",default='',help='The destination string.')
-def main(src,dest):
-    click.echo(lev(src,dest))
+@click.pass_context
+def main(ctx,src,dest):
+    '''
+    compute the levenshtein distance bw two strings.
+    '''
+    click.secho(ASCII,fg='green',bold=True)
+
+    #show help if both options are empty
+    if not src and not dest:
+        click.echo(ctx.get_help())
+        return
+
+    distance = lev(src,dest)
+    click.secho(f"\n\n**** Levenshtein distance bw '{src}' and '{dest}' is {distance}",
+    fg='green')
     
 
         
