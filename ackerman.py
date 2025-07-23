@@ -53,8 +53,7 @@ def main(ctx,src,dest):
         return
 
     distance = lev(src,dest)
-    click.secho(f"\n\n**** Levenshtein distance bw '{src}' and '{dest}' is {distance}",
-    fg='green')
+    click.secho(f">>> Levenshtein distance bw '{src}' and '{dest}' is {distance}",fg='green')
     
 
         
